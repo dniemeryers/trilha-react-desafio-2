@@ -1,5 +1,5 @@
 import React from 'react'
-
+import logox from '../../assets/icone-x.png'
 import { ItemContainer } from './styles';
 
 function ItemRepo({repo, handleRemoveRepo}) {
@@ -10,10 +10,10 @@ function ItemRepo({repo, handleRemoveRepo}) {
 
   return (
     <ItemContainer onClick={handleRemove}>
-        <h3>{repo.name}</h3>
+        <div className='box'><h3>{repo.name}</h3>  <img className="remover"src={logox} width={30} height={30} alt="logox"/></div>
         <p>{repo.full_name}</p>
-        <a href={repo.html_url} rel="noreferrer" target="_blank">Ver repositório</a><br />
-        <a href="#"  rel="noreferrer" className="remover">Remover</a>
+        <a className='verrepo' href={repo.html_url} rel="noreferrer" target="_blank">Ver repositório</a>
+        
         <hr />
     </ItemContainer>
   )
